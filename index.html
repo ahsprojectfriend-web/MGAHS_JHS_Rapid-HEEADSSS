@@ -17,13 +17,15 @@
 
         .question-row:nth-child(even) { background-color: #f9fafb; }
         
-        /* Custom styling for the radio buttons to match maroon theme */
         input[type="radio"] {
             accent-color: #800000;
+            width: 1.1rem;
+            height: 1.1rem;
+            cursor: pointer;
         }
     </style>
 </head>
-<body class="bg-gray-100 py-10 px-4 font-sans">
+<body class="bg-gray-100 py-10 px-4 font-sans text-gray-900">
 
     <div class="max-w-4xl mx-auto bg-white shadow-xl rounded-sm overflow-hidden border border-gray-300">
         <div class="bg-maroon text-white p-6 text-center">
@@ -82,42 +84,86 @@
                     <div>
                         <label class="block text-[10px] font-bold text-gray-500 uppercase">Baitang (Grade Level)</label>
                         <select name="baitang" class="w-full p-2 border-b border-gray-300 bg-transparent text-sm font-bold text-maroon">
-                            <option value="7">Grade 7</option>
-                            <option value="8">Grade 8</option>
-                            <option value="9">Grade 9</option>
-                            <option value="10">Grade 10</option>
-                            <option value="11">Grade 11</option>
-                            <option value="12">Grade 12</option>
-                            <option value="ALS">ALS</option>
+                            <option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="ALS">ALS</option>
                         </select>
                     </div>
                 </div>
-            </div>
-
-            <div class="bg-yellow-50 border border-yellow-200 p-4 rounded text-center">
-                <p class="text-xs text-gray-800 font-bold uppercase">
-                    PANUTO: Sagutin nang <span class="text-maroon">TAPAT</span> ang mga sumusunod na katanungan. <br>
-                    <span class="text-red-600">Ang mga sagot ay CONFIDENTIAL.</span>
-                </p>
             </div>
 
             <div class="space-y-1">
                 <h3 class="font-bold text-maroon border-b border-maroon pb-1 uppercase text-xs tracking-widest mb-4">Screening Checklist</h3>
                 
                 <div id="questions-list">
+                    <script>
+                        const questions = [
+                            "1. Ikaw ba ay nakaranas ng pananakit o pananakot sa inyong tahanan/bahay?",
+                            "2. May mga pagkakataon ba na pinag-isipan mong maglayas o umalis ng inyong bahay?",
+                            "3. Nakaranas ka ba ng bullying, pananakit o pananakot sa paaralan?",
+                            "4. May pagkakataon ba na seryoso mong naisip na wakasan ang iyong buhay?",
+                            "5. Naninigarilyo ka ba o gumagamit ng vape?",
+                            "6. Umiinom ka ba ng alak?",
+                            "7. Nakakita ka ba ng mga ipinagbabawal na 'gamot' o drugs?",
+                            "8. Ikaw ba ay nakaranas ng magka-boyfriend/girlfriend?"
+                        ];
+                        const list = document.getElementById('questions-list');
+                        questions.forEach((text, i) => {
+                            const num = i + 1;
+                            list.innerHTML += `
+                                <div class="question-row flex flex-col md:flex-row justify-between items-start md:items-center py-4 px-4 border-b border-gray-100 gap-4">
+                                    <p class="text-sm flex-1">${text}</p>
+                                    <div class="flex gap-8 text-sm font-bold">
+                                        <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q${num}" value="Hindi" required> Hindi</label>
+                                        <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q${num}" value="Oo"> Oo</label>
+                                    </div>
+                                </div>`;
+                        });
+                    </script>
+
+                    <div class="question-row py-4 px-4 border-b border-gray-100">
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                            <p class="text-sm flex-1">9. Ikaw ba ay nakaranas ng makipag sex o makipagtalik?</p>
+                            <div class="flex gap-8 text-sm font-bold">
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q9" value="Hindi" onclick="toggleSex(false)" required> Hindi</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q9" value="Oo" onclick="toggleSex(true)"> Oo</label>
+                            </div>
+                        </div>
+                        <div id="sub-sex" class="hidden mt-4 ml-0 md:ml-6 p-4 bg-gray-50 border-l-4 border-maroon space-y-4">
+                            <div>
+                                <label class="block text-[10px] font-bold text-gray-500 uppercase italic">- Sino o kanino? (Who/With whom?)</label>
+                                <input type="text" name="q9_who" class="w-full p-2 border-b border-gray-300 bg-transparent text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-[10px] font-bold text-gray-500 uppercase italic">- Ilan ang naging sex partners sa huling 6 buwan?</label>
+                                <input type="number" name="q9_count" class="w-full p-2 border-b border-gray-300 bg-transparent text-sm">
+                            </div>
+                        </div>
                     </div>
+
+                    <script>
+                        const lastQs = [
+                            "10. Nakaranas ka ba na ikaw ay pinilit makipag sex?",
+                            "11. Ikaw ba ay nakaranas nang mabuntis, o makabuntis?",
+                            "12. Gusto mo bang mag pa counsel o komunsulta para matulungan ka?"
+                        ];
+                        lastQs.forEach((text, i) => {
+                            const num = i + 10;
+                            list.innerHTML += `
+                                <div class="question-row flex flex-col md:flex-row justify-between items-start md:items-center py-4 px-4 border-b border-gray-100 gap-4">
+                                    <p class="text-sm flex-1">${text}</p>
+                                    <div class="flex gap-8 text-sm font-bold">
+                                        <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q${num}" value="Hindi" required> Hindi</label>
+                                        <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q${num}" value="Oo"> Oo</label>
+                                    </div>
+                                </div>`;
+                        });
+                    </script>
+                </div>
             </div>
 
-            <div class="pt-10">
-                <button type="submit" id="submitBtn" class="w-full bg-maroon text-white font-bold py-4 uppercase tracking-widest hover:bg-red-900 transition-all shadow-lg rounded-sm active:scale-[0.98]">
-                    Submit Assessment
-                </button>
-            </div>
+            <button type="submit" id="submitBtn" class="w-full bg-maroon text-white font-bold py-4 uppercase tracking-widest hover:bg-red-900 shadow-lg active:scale-[0.98]">
+                Submit Assessment
+            </button>
         </form>
-
-        <div class="p-6 bg-gray-50 text-[10px] text-gray-400 text-center border-t border-gray-200 uppercase tracking-tighter">
-            Data Privacy Compliance 2026 • DepEd Psychosocial Tool
-        </div>
     </div>
 
     <script>
@@ -125,84 +171,23 @@
         const form = document.getElementById('screeningForm');
         const btn = document.getElementById('submitBtn');
 
-        const questions = [
-            "1. Ikaw ba ay nakaranas ng pananakit o pananakot sa inyong tahanan/bahay?",
-            "2. May mga pagkakataon ba na pinag-isipan mong maglayas o umalis ng inyong bahay?",
-            "3. Nakaranas ka ba ng bullying, pananakit o pananakot sa paaralan?",
-            "4. May pagkakataon ba na seryoso mong naisip na wakasan ang iyong buhay?",
-            "5. Naninigarilyo ka ba o gumagamit ng vape?",
-            "6. Umiinom ka ba ng alak?",
-            "7. Nakakita ka ba ng mga ipinagbabawal na 'gamot' o drugs?",
-            "8. Ikaw ba ay nakaranas ng magka-boyfriend/girlfriend?",
-            "9. Ikaw ba ay nakaranas ng makipag sex o makipagtalik?",
-            "10. Nakaranas ka ba na ikaw ay pinilit makipag sex?",
-            "11. Ikaw ba ay nakaranas nang mabuntis, o makabuntis?",
-            "12. Gusto mo bang mag pa counsel o komunsulta para matulungan ka?"
-        ];
-
-        const questionsList = document.getElementById('questions-list');
-
-        questions.forEach((text, index) => {
-            const qNum = index + 1;
-            const div = document.createElement('div');
-            div.className = "question-row flex flex-col md:flex-row justify-between items-start md:items-center py-4 px-4 border-b border-gray-100 gap-4";
-            
-            let html = `
-                <p class="text-sm text-gray-700 flex-1">${text}</p>
-                <div class="flex gap-12 font-bold text-sm">
-                    <label class="flex items-center gap-2 cursor-pointer">
-                        <input type="radio" name="q${qNum}" value="Hindi" required ${qNum === 9 ? 'onclick="toggleSexDetails(false)"' : ''}> Hindi
-                    </label>
-                    <label class="flex items-center gap-2 cursor-pointer">
-                        <input type="radio" name="q${qNum}" value="Oo" ${qNum === 9 ? 'onclick="toggleSexDetails(true)"' : ''}> Oo
-                    </label>
-                </div>
-            `;
-            
-            div.innerHTML = html;
-            questionsList.appendChild(div);
-
-            // Add the conditional sub-questions for Question 9
-            if (qNum === 9) {
-                const subDiv = document.createElement('div');
-                subDiv.id = "sub-sex";
-                subDiv.className = "hidden mt-4 ml-0 md:ml-4 p-4 bg-gray-50 border-l-4 border-maroon space-y-4";
-                subDiv.innerHTML = `
-                    <div>
-                        <label class="block text-[10px] font-bold text-gray-500 uppercase">Sino o kanino?</label>
-                        <input type="text" name="q9_who" class="w-full p-2 border-b border-gray-300 bg-transparent text-sm">
-                    </div>
-                    <div>
-                        <label class="block text-[10px] font-bold text-gray-500 uppercase">Ilan ang naging sex partners sa huling 6 buwan?</label>
-                        <input type="number" name="q9_count" class="w-full p-2 border-b border-gray-300 bg-transparent text-sm">
-                    </div>
-                `;
-                questionsList.appendChild(subDiv);
-            }
-        });
-
-        function toggleSexDetails(show) {
-            document.getElementById('sub-sex').classList.toggle('hidden', !show);
-        }
+        function toggleSex(show) { document.getElementById('sub-sex').classList.toggle('hidden', !show); }
 
         form.addEventListener('submit', e => {
             e.preventDefault();
             btn.disabled = true;
-            btn.innerHTML = `<span class="animate-pulse">Sending Data...</span>`;
-
+            btn.innerHTML = "Sending...";
             fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                .then(response => {
-                    alert('Salamat! Ang iyong data ay matagumpay na naipadala sa Google Sheets.');
+                .then(r => {
+                    alert('Salamat! Data successfully sent.');
                     btn.disabled = false;
                     btn.innerHTML = "Submit Assessment";
                     form.reset();
                     document.getElementById('sub-sex').classList.add('hidden');
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
                 })
-                .catch(error => {
-                    alert('May error sa pag-submit. Pakisuyo, i-check ang iyong internet connection.');
+                .catch(err => {
+                    alert('Error sending data.');
                     btn.disabled = false;
-                    btn.innerHTML = "Submit Assessment";
                 });
         });
     </script>
