@@ -15,8 +15,12 @@
             border-bottom: 2px solid #800000 !important;
         }
 
-        /* Zebra striping for better readability */
         .question-row:nth-child(even) { background-color: #f9fafb; }
+        
+        /* Custom styling for the radio buttons to match maroon theme */
+        input[type="radio"] {
+            accent-color: #800000;
+        }
     </style>
 </head>
 <body class="bg-gray-100 py-10 px-4 font-sans">
@@ -59,9 +63,9 @@
                     <div>
                         <label class="block text-[10px] font-bold text-gray-500 uppercase">Kasarian (Gender)</label>
                         <select name="kasarian" class="w-full p-2 border-b border-gray-300 bg-transparent text-sm">
-                            <option>Lalaki</option>
-                            <option>Babae</option>
-                            <option>Iba pa</option>
+                            <option value="Lalaki">Lalaki</option>
+                            <option value="Babae">Babae</option>
+                            <option value="Iba pa">Iba pa</option>
                         </select>
                     </div>
                     <div>
@@ -78,7 +82,13 @@
                     <div>
                         <label class="block text-[10px] font-bold text-gray-500 uppercase">Baitang (Grade Level)</label>
                         <select name="baitang" class="w-full p-2 border-b border-gray-300 bg-transparent text-sm font-bold text-maroon">
-                            <option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>ALS</option>
+                            <option value="7">Grade 7</option>
+                            <option value="8">Grade 8</option>
+                            <option value="9">Grade 9</option>
+                            <option value="10">Grade 10</option>
+                            <option value="11">Grade 11</option>
+                            <option value="12">Grade 12</option>
+                            <option value="ALS">ALS</option>
                         </select>
                     </div>
                 </div>
@@ -94,135 +104,106 @@
             <div class="space-y-1">
                 <h3 class="font-bold text-maroon border-b border-maroon pb-1 uppercase text-xs tracking-widest mb-4">Screening Checklist</h3>
                 
-                <div class="hidden md:flex justify-between px-4 py-2 bg-gray-100 text-[10px] font-bold uppercase text-gray-600">
-                    <span class="flex-1">Katanungan (Questions)</span>
-                    <div class="flex gap-12">
-                        <span>Hindi (No)</span>
-                        <span>Oo (Yes)</span>
-                    </div>
-                </div>
-
                 <div id="questions-list">
-                    <div class="question-row flex flex-col md:flex-row justify-between items-start md:items-center py-4 px-4 border-b border-gray-100 gap-4">
-                        <p class="text-sm text-gray-700 flex-1">1. Ikaw ba ay nakaranas ng pananakit o pananakot sa inyong tahanan/bahay?</p>
-                        <div class="flex gap-16 md:gap-20 px-2">
-                            <input type="radio" name="q1" value="Hindi" class="w-4 h-4 accent-maroon" required>
-                            <input type="radio" name="q1" value="Oo" class="w-4 h-4 accent-maroon">
-                        </div>
                     </div>
-                    <div class="question-row flex flex-col md:flex-row justify-between items-start md:items-center py-4 px-4 border-b border-gray-100 gap-4">
-                        <p class="text-sm text-gray-700 flex-1">2. May mga pagkakataon ba na pinag-isipan mong maglayas o umalis ng inyong bahay?</p>
-                        <div class="flex gap-16 md:gap-20 px-2">
-                            <input type="radio" name="q2" value="Hindi" class="w-4 h-4 accent-maroon" required>
-                            <input type="radio" name="q2" value="Oo" class="w-4 h-4 accent-maroon">
-                        </div>
-                    </div>
-                    <div class="question-row flex flex-col md:flex-row justify-between items-start md:items-center py-4 px-4 border-b border-gray-100 gap-4">
-                        <p class="text-sm text-gray-700 flex-1">3. Nakaranas ka ba ng bullying, pananakit o pananakot sa paaralan?</p>
-                        <div class="flex gap-16 md:gap-20 px-2">
-                            <input type="radio" name="q3" value="Hindi" class="w-4 h-4 accent-maroon" required>
-                            <input type="radio" name="q3" value="Oo" class="w-4 h-4 accent-maroon">
-                        </div>
-                    </div>
-                    <div class="question-row flex flex-col md:flex-row justify-between items-start md:items-center py-4 px-4 border-b border-gray-100 gap-4">
-                        <p class="text-sm text-gray-700 flex-1">4. May pagkakataon ba na seryoso mong naisip na wakasan ang iyong buhay?</p>
-                        <div class="flex gap-16 md:gap-20 px-2">
-                            <input type="radio" name="q4" value="Hindi" class="w-4 h-4 accent-maroon" required>
-                            <input type="radio" name="q4" value="Oo" class="w-4 h-4 accent-maroon">
-                        </div>
-                    </div>
-                    <div class="question-row flex flex-col md:flex-row justify-between items-start md:items-center py-4 px-4 border-b border-gray-100 gap-4">
-                        <p class="text-sm text-gray-700 flex-1">5. Naninigarilyo ka ba o gumagamit ng vape?</p>
-                        <div class="flex gap-16 md:gap-20 px-2">
-                            <input type="radio" name="q5" value="Hindi" class="w-4 h-4 accent-maroon" required>
-                            <input type="radio" name="q5" value="Oo" class="w-4 h-4 accent-maroon">
-                        </div>
-                    </div>
-                    <div class="question-row flex flex-col md:flex-row justify-between items-start md:items-center py-4 px-4 border-b border-gray-100 gap-4">
-                        <p class="text-sm text-gray-700 flex-1">6. Umiinom ka ba ng alak?</p>
-                        <div class="flex gap-16 md:gap-20 px-2">
-                            <input type="radio" name="q6" value="Hindi" class="w-4 h-4 accent-maroon" required>
-                            <input type="radio" name="q6" value="Oo" class="w-4 h-4 accent-maroon">
-                        </div>
-                    </div>
-                    <div class="question-row flex flex-col md:flex-row justify-between items-start md:items-center py-4 px-4 border-b border-gray-100 gap-4">
-                        <p class="text-sm text-gray-700 flex-1">7. Nakakita ka ba ng mga ipinagbabawal na "gamot" o drugs?</p>
-                        <div class="flex gap-16 md:gap-20 px-2">
-                            <input type="radio" name="q7" value="Hindi" class="w-4 h-4 accent-maroon" required>
-                            <input type="radio" name="q7" value="Oo" class="w-4 h-4 accent-maroon">
-                        </div>
-                    </div>
-                    <div class="question-row flex flex-col md:flex-row justify-between items-start md:items-center py-4 px-4 border-b border-gray-100 gap-4">
-                        <p class="text-sm text-gray-700 flex-1">8. Ikaw ba ay nakaranas ng magka-boyfriend/girlfriend?</p>
-                        <div class="flex gap-16 md:gap-20 px-2">
-                            <input type="radio" name="q8" value="Hindi" class="w-4 h-4 accent-maroon" required>
-                            <input type="radio" name="q8" value="Oo" class="w-4 h-4 accent-maroon">
-                        </div>
-                    </div>
-                    <div class="question-row py-4 px-4 border-b border-gray-100">
-                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-                            <p class="text-sm text-gray-700 flex-1">9. Ikaw ba ay nakaranas ng makipag sex o makipagtalik?</p>
-                            <div class="flex gap-16 md:gap-20 px-2">
-                                <input type="radio" name="q9" value="Hindi" class="w-4 h-4 accent-maroon" onclick="toggleSexDetails(false)" required>
-                                <input type="radio" name="q9" value="Oo" class="w-4 h-4 accent-maroon" onclick="toggleSexDetails(true)">
-                            </div>
-                        </div>
-                        <div id="sub-sex" class="hidden mt-4 ml-0 md:ml-4 p-4 bg-gray-50 border-l-4 border-maroon space-y-4">
-                            <div>
-                                <label class="block text-[10px] font-bold text-gray-500 uppercase">Sino o kanino? (Who?)</label>
-                                <input type="text" name="q9_who" class="w-full p-2 border-b border-gray-300 bg-transparent text-sm">
-                            </div>
-                            <div>
-                                <label class="block text-[10px] font-bold text-gray-500 uppercase">Ilan ang naging sex partners sa huling 6 buwan?</label>
-                                <input type="number" name="q9_count" class="w-full p-2 border-b border-gray-300 bg-transparent text-sm">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="question-row flex flex-col md:flex-row justify-between items-start md:items-center py-4 px-4 border-b border-gray-100 gap-4">
-                        <p class="text-sm text-gray-700 flex-1">10. Nakaranas ka ba na ikaw ay pinilit makipag sex?</p>
-                        <div class="flex gap-16 md:gap-20 px-2">
-                            <input type="radio" name="q10" value="Hindi" class="w-4 h-4 accent-maroon" required>
-                            <input type="radio" name="q10" value="Oo" class="w-4 h-4 accent-maroon">
-                        </div>
-                    </div>
-                    <div class="question-row flex flex-col md:flex-row justify-between items-start md:items-center py-4 px-4 border-b border-gray-100 gap-4">
-                        <p class="text-sm text-gray-700 flex-1">11. Ikaw ba ay nakaranas nang mabuntis, o makabuntis?</p>
-                        <div class="flex gap-16 md:gap-20 px-2">
-                            <input type="radio" name="q11" value="Hindi" class="w-4 h-4 accent-maroon" required>
-                            <input type="radio" name="q11" value="Oo" class="w-4 h-4 accent-maroon">
-                        </div>
-                    </div>
-                    <div class="question-row flex flex-col md:flex-row justify-between items-start md:items-center py-4 px-4 border-b border-gray-100 gap-4">
-                        <p class="text-sm text-gray-700 flex-1">12. Gusto mo bang mag pa counsel o komunsulta para matulungan ka?</p>
-                        <div class="flex gap-16 md:gap-20 px-2">
-                            <input type="radio" name="q12" value="Hindi" class="w-4 h-4 accent-maroon" required>
-                            <input type="radio" name="q12" value="Oo" class="w-4 h-4 accent-maroon">
-                        </div>
-                    </div>
-                </div>
             </div>
 
             <div class="pt-10">
-                <button type="submit" class="w-full bg-maroon text-white font-bold py-4 uppercase tracking-widest hover:bg-red-900 transition-all shadow-lg rounded-sm active:scale-[0.98]">
+                <button type="submit" id="submitBtn" class="w-full bg-maroon text-white font-bold py-4 uppercase tracking-widest hover:bg-red-900 transition-all shadow-lg rounded-sm active:scale-[0.98]">
                     Submit Assessment
                 </button>
             </div>
         </form>
 
-        <div class="p-6 bg-gray-50 text-[10px] text-gray-400 text-center border-t border-gray-200">
-            CONFIDENTIALITY NOTICE: Information submitted through this form is protected and private.
+        <div class="p-6 bg-gray-50 text-[10px] text-gray-400 text-center border-t border-gray-200 uppercase tracking-tighter">
+            Data Privacy Compliance 2026 • DepEd Psychosocial Tool
         </div>
     </div>
 
     <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzgiz4VfZBRfemZe7V1o-tXKaUnYXQc7ZG1cuqCETrd4mGMOM99OJzfZoI6q0t24lcK7Q/exec';
+        const form = document.getElementById('screeningForm');
+        const btn = document.getElementById('submitBtn');
+
+        const questions = [
+            "1. Ikaw ba ay nakaranas ng pananakit o pananakot sa inyong tahanan/bahay?",
+            "2. May mga pagkakataon ba na pinag-isipan mong maglayas o umalis ng inyong bahay?",
+            "3. Nakaranas ka ba ng bullying, pananakit o pananakot sa paaralan?",
+            "4. May pagkakataon ba na seryoso mong naisip na wakasan ang iyong buhay?",
+            "5. Naninigarilyo ka ba o gumagamit ng vape?",
+            "6. Umiinom ka ba ng alak?",
+            "7. Nakakita ka ba ng mga ipinagbabawal na 'gamot' o drugs?",
+            "8. Ikaw ba ay nakaranas ng magka-boyfriend/girlfriend?",
+            "9. Ikaw ba ay nakaranas ng makipag sex o makipagtalik?",
+            "10. Nakaranas ka ba na ikaw ay pinilit makipag sex?",
+            "11. Ikaw ba ay nakaranas nang mabuntis, o makabuntis?",
+            "12. Gusto mo bang mag pa counsel o komunsulta para matulungan ka?"
+        ];
+
+        const questionsList = document.getElementById('questions-list');
+
+        questions.forEach((text, index) => {
+            const qNum = index + 1;
+            const div = document.createElement('div');
+            div.className = "question-row flex flex-col md:flex-row justify-between items-start md:items-center py-4 px-4 border-b border-gray-100 gap-4";
+            
+            let html = `
+                <p class="text-sm text-gray-700 flex-1">${text}</p>
+                <div class="flex gap-12 font-bold text-sm">
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="radio" name="q${qNum}" value="Hindi" required ${qNum === 9 ? 'onclick="toggleSexDetails(false)"' : ''}> Hindi
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="radio" name="q${qNum}" value="Oo" ${qNum === 9 ? 'onclick="toggleSexDetails(true)"' : ''}> Oo
+                    </label>
+                </div>
+            `;
+            
+            div.innerHTML = html;
+            questionsList.appendChild(div);
+
+            // Add the conditional sub-questions for Question 9
+            if (qNum === 9) {
+                const subDiv = document.createElement('div');
+                subDiv.id = "sub-sex";
+                subDiv.className = "hidden mt-4 ml-0 md:ml-4 p-4 bg-gray-50 border-l-4 border-maroon space-y-4";
+                subDiv.innerHTML = `
+                    <div>
+                        <label class="block text-[10px] font-bold text-gray-500 uppercase">Sino o kanino?</label>
+                        <input type="text" name="q9_who" class="w-full p-2 border-b border-gray-300 bg-transparent text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-bold text-gray-500 uppercase">Ilan ang naging sex partners sa huling 6 buwan?</label>
+                        <input type="number" name="q9_count" class="w-full p-2 border-b border-gray-300 bg-transparent text-sm">
+                    </div>
+                `;
+                questionsList.appendChild(subDiv);
+            }
+        });
+
         function toggleSexDetails(show) {
-            const subSection = document.getElementById('sub-sex');
-            subSection.classList.toggle('hidden', !show);
+            document.getElementById('sub-sex').classList.toggle('hidden', !show);
         }
 
-        document.getElementById('screeningForm').addEventListener('submit', function(e) {
+        form.addEventListener('submit', e => {
             e.preventDefault();
-            alert('Salamat! Naisumite na ang iyong mga sagot.');
+            btn.disabled = true;
+            btn.innerHTML = `<span class="animate-pulse">Sending Data...</span>`;
+
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    alert('Salamat! Ang iyong data ay matagumpay na naipadala sa Google Sheets.');
+                    btn.disabled = false;
+                    btn.innerHTML = "Submit Assessment";
+                    form.reset();
+                    document.getElementById('sub-sex').classList.add('hidden');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                })
+                .catch(error => {
+                    alert('May error sa pag-submit. Pakisuyo, i-check ang iyong internet connection.');
+                    btn.disabled = false;
+                    btn.innerHTML = "Submit Assessment";
+                });
         });
     </script>
 </body>
