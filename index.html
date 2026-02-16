@@ -9,20 +9,9 @@
         .bg-maroon { background-color: #800000; }
         .text-maroon { color: #800000; }
         .border-maroon { border-color: #800000; }
-        
-        input:focus, select:focus {
-            outline: none;
-            border-bottom: 2px solid #800000 !important;
-        }
-
+        input:focus, select:focus { outline: none; border-bottom: 2px solid #800000 !important; }
         .question-row:nth-child(even) { background-color: #f9fafb; }
-        
-        input[type="radio"] {
-            accent-color: #800000;
-            width: 1.1rem;
-            height: 1.1rem;
-            cursor: pointer;
-        }
+        input[type="radio"] { accent-color: #800000; width: 1.1rem; height: 1.1rem; cursor: pointer; }
     </style>
 </head>
 <body class="bg-gray-100 py-10 px-4 font-sans text-gray-900">
@@ -36,7 +25,7 @@
                     <h2 class="text-maroon text-2xl md:text-3xl font-black uppercase leading-tight">
                         Manuel G. Araullo High School
                     </h2>
-                    <p class="text-gray-600 font-bold tracking-[0.2em] text-sm uppercase">Lungsod ng Maynila</p>
+                    <p class="text-gray-600 font-bold tracking-[0.2em] text-sm uppercase">City of Manila</p>
                 </div>
             </div>
         </div>
@@ -52,56 +41,58 @@
                 <h3 class="font-bold text-maroon border-b border-maroon pb-1 uppercase text-xs tracking-widest">Personal Information</h3>
                 
                 <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
-                    <div class="md:col-span-1">
+                    <div>
                         <label class="block text-[10px] font-bold text-gray-500 uppercase">LRN</label>
-                        <input type="text" name="lrn" required placeholder="12 digits" class="w-full p-2 border-b border-gray-300 bg-transparent text-sm font-mono tracking-wider">
+                        <input type="text" name="LRN" required class="w-full p-2 border-b border-gray-300 bg-transparent text-sm">
                     </div>
-                    <div class="md:col-span-1">
-                        <label class="block text-[10px] font-bold text-gray-500 uppercase">Surname (Apelyido)</label>
-                        <input type="text" name="surname" required class="w-full p-2 border-b border-gray-300 bg-transparent text-sm">
+                    <div>
+                        <label class="block text-[10px] font-bold text-gray-500 uppercase">Surname</label>
+                        <input type="text" name="Surname" required class="w-full p-2 border-b border-gray-300 bg-transparent text-sm">
                     </div>
-                    <div class="md:col-span-1">
+                    <div>
                         <label class="block text-[10px] font-bold text-gray-500 uppercase">First Name</label>
-                        <input type="text" name="firstname" required class="w-full p-2 border-b border-gray-300 bg-transparent text-sm">
+                        <input type="text" name="Firstname" required class="w-full p-2 border-b border-gray-300 bg-transparent text-sm">
                     </div>
-                    <div class="md:col-span-1">
+                    <div>
                         <label class="block text-[10px] font-bold text-gray-500 uppercase">M.I.</label>
-                        <input type="text" name="mi" maxlength="2" class="w-full p-2 border-b border-gray-300 bg-transparent text-sm">
+                        <input type="text" name="MI" maxlength="2" class="w-full p-2 border-b border-gray-300 bg-transparent text-sm">
                     </div>
-                    <div class="md:col-span-1">
+                    <div>
                         <label class="block text-[10px] font-bold text-gray-500 uppercase">Suffix</label>
-                        <input type="text" name="suffix" class="w-full p-2 border-b border-gray-300 bg-transparent text-sm">
+                        <input type="text" name="Suffix" class="w-full p-2 border-b border-gray-300 bg-transparent text-sm">
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div>
-                        <label class="block text-[10px] font-bold text-gray-500 uppercase">Edad (Age)</label>
-                        <input type="number" name="edad" required class="w-full p-2 border-b border-gray-300 bg-transparent text-sm">
+                        <label class="block text-[10px] font-bold text-gray-500 uppercase">Age (Edad)</label>
+                        <input type="number" name="Edad" required class="w-full p-2 border-b border-gray-300 bg-transparent text-sm">
                     </div>
                     <div>
-                        <label class="block text-[10px] font-bold text-gray-500 uppercase">Kasarian (Gender)</label>
-                        <select name="kasarian" required class="w-full p-2 border-b border-gray-300 bg-transparent text-sm">
+                        <label class="block text-[10px] font-bold text-gray-500 uppercase">Gender (Kasarian)</label>
+                        <select name="Kasarian" required class="w-full p-2 border-b border-gray-300 bg-transparent text-sm">
                             <option value="" disabled selected>Pumili...</option>
-                            <option value="Lalaki">Lalaki</option>
-                            <option value="Babae">Babae</option>
+                            <option value="Lalaki">Lalaki (Male)</option>
+                            <option value="Babae">Babae (Female)</option>
                         </select>
                     </div>
                     <div>
-                        <label class="block text-[10px] font-bold text-gray-500 uppercase">Petsa ng Kaarawan</label>
-                        <input type="date" name="birthday" required class="w-full p-2 border-b border-gray-300 bg-transparent text-sm">
+                        <label class="block text-[10px] font-bold text-gray-500 uppercase">Birthday</label>
+                        <input type="date" name="Birthday" required class="w-full p-2 border-b border-gray-300 bg-transparent text-sm">
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
                     <div class="md:col-span-3">
-                        <label class="block text-[10px] font-bold text-gray-500 uppercase">Tirahan (Address)</label>
-                        <input type="text" name="tirahan" required class="w-full p-2 border-b border-gray-300 bg-transparent text-sm">
+                        <label class="block text-[10px] font-bold text-gray-500 uppercase">Address (Tirahan)</label>
+                        <input type="text" name="Tirahan" required class="w-full p-2 border-b border-gray-300 bg-transparent text-sm">
                     </div>
                     <div>
-                        <label class="block text-[10px] font-bold text-gray-500 uppercase">Baitang (Grade Level)</label>
-                        <select name="baitang" class="w-full p-2 border-b border-gray-300 bg-transparent text-sm font-bold text-maroon">
-                            <option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="ALS">ALS</option>
+                        <label class="block text-[10px] font-bold text-gray-500 uppercase">Grade Level (Baitang)</label>
+                        <select name="Baitang" class="w-full p-2 border-b border-gray-300 bg-transparent text-sm font-bold text-maroon">
+                            <option value="7">7</option><option value="8">8</option><option value="9">9</option>
+                            <option value="10">10</option><option value="11">11</option><option value="12">12</option>
+                            <option value="ALS">ALS</option>
                         </select>
                     </div>
                 </div>
@@ -109,37 +100,34 @@
 
             <div class="space-y-1">
                 <h3 class="font-bold text-maroon border-b border-maroon pb-1 uppercase text-xs tracking-widest mb-4">Screening Checklist</h3>
-                
-                <div id="questions-list">
-                    </div>
+                <div id="questions-list"></div>
 
                 <div class="question-row py-4 px-4 border-b border-gray-100">
                     <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                         <p class="text-sm flex-1">9. Ikaw ba ay nakaranas ng makipag sex o makipagtalik?</p>
                         <div class="flex gap-8 text-sm font-bold">
-                            <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q9" value="Hindi" onclick="toggleSex(false)" required> Hindi</label>
-                            <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q9" value="Oo" onclick="toggleSex(true)"> Oo</label>
+                            <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="Q9" value="Hindi" onclick="toggleSex(false)" required> Hindi</label>
+                            <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="Q9" value="Oo" onclick="toggleSex(true)"> Oo</label>
                         </div>
                     </div>
                     <div id="sub-sex" class="hidden mt-4 ml-0 md:ml-6 p-4 bg-gray-50 border-l-4 border-maroon space-y-4">
                         <div>
-                            <label class="block text-[10px] font-bold text-gray-500 uppercase italic">- Sino o kanino?</label>
-                            <input type="text" name="q9_who" class="w-full p-2 border-b border-gray-300 bg-transparent text-sm">
+                            <label class="block text-[10px] font-bold text-gray-500 uppercase italic">Sino o kanino?</label>
+                            <input type="text" name="Q9_Who" class="w-full p-2 border-b border-gray-300 bg-transparent text-sm">
                         </div>
                         <div>
-                            <label class="block text-[10px] font-bold text-gray-500 uppercase italic">- Ilan ang naging sex partners sa huling 6 buwan?</label>
-                            <input type="number" name="q9_count" class="w-full p-2 border-b border-gray-300 bg-transparent text-sm">
+                            <label class="block text-[10px] font-bold text-gray-500 uppercase italic">Ilan ang naging sex partners sa huling 6 buwan?</label>
+                            <input type="number" name="Q9_Count" class="w-full p-2 border-b border-gray-300 bg-transparent text-sm">
                         </div>
                     </div>
                 </div>
 
-                <div id="questions-list-end">
-                    </div>
+                <div id="questions-list-end"></div>
             </div>
 
             <div class="bg-gray-50 p-4 rounded border border-gray-200 text-[11px] text-gray-600 leading-relaxed">
                 <p class="font-bold uppercase mb-1">Data Privacy Notice:</p>
-                Ang Manuel G. Araullo High School ay nakatuon sa pagprotekta sa iyong privacy. Ang lahat ng impormasyong makukuha sa form na ito ay ituturing na <strong>Confidential</strong> at gagamitin lamang para sa layunin ng psychosocial screening at intervention alinsunod sa Data Privacy Act of 2012. Sa pag-click ng "Submit", pumapayag ka sa pagkolekta at pagproseso ng iyong datos.
+                Ang Manuel G. Araullo High School ay nakatuon sa pagprotekta sa iyong privacy. Ang lahat ng impormasyong makukuha sa form na ito ay ituturing na **Confidential** at gagamitin lamang para sa layunin ng psychosocial screening alinsunod sa Data Privacy Act of 2012.
             </div>
 
             <button type="submit" id="submitBtn" class="w-full bg-maroon text-white font-bold py-4 uppercase tracking-widest hover:bg-red-900 shadow-lg active:scale-[0.98] transition-all">
@@ -149,7 +137,7 @@
     </div>
 
     <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbzgiz4VfZBRfemZe7V1o-tXKaUnYXQc7ZG1cuqCETrd4mGMOM99OJzfZoI6q0t24lcK7Q/exec';
+        const scriptURL = 'https://script.google.com/macros/s/AKfycby6_HKArPZWY-b2fqsKgV41LbEXz2VFG5iy3gkWI8nZUpdWfnOzUu3etCKVCJjyb8Jp/exec';
         const form = document.getElementById('screeningForm');
         const btn = document.getElementById('submitBtn');
 
@@ -175,8 +163,8 @@
                 <div class="question-row flex flex-col md:flex-row justify-between items-start md:items-center py-4 px-4 border-b border-gray-100 gap-4">
                     <p class="text-sm flex-1">${text}</p>
                     <div class="flex gap-8 text-sm font-bold">
-                        <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q${num}" value="Hindi" required> Hindi</label>
-                        <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q${num}" value="Oo"> Oo</label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="Q${num}" value="Hindi" required> Hindi</label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="Q${num}" value="Oo"> Oo</label>
                     </div>
                 </div>`;
         }
@@ -204,7 +192,7 @@
                     document.getElementById('sub-sex').classList.add('hidden');
                 })
                 .catch(err => {
-                    alert('Nagkaroon ng error sa pagpapadala.');
+                    alert('Error: Hindi naipadala ang datos. Pakisuri ang iyong koneksyon.');
                     btn.disabled = false;
                     btn.innerHTML = "Submit Assessment";
                 });
